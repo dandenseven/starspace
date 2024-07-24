@@ -9,7 +9,7 @@ class Users:
     users_acct = ""
 
     def __init__(self, username="", email="", phone_number="", first_name="", last_name="",
-                last_login="", user_id=""):
+                last_login=None, user_id=None):
         
         self.username = username
         self.email = email
@@ -28,3 +28,4 @@ class Users:
                 "last_name": self.last_name,
                 "last_login": datetime.datetime().timestamp()
                 }
+    
