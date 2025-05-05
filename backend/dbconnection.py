@@ -1,21 +1,41 @@
 import psycopg2
 # Connect to Postgres DB
+import os
 
+# Database connection parameters
 
-connection = psycopg2.connect(database="daneknight", 
-                user="username", 
-                password="pass", 
-                host="hostname", 
-                port=5432)
+host = 'localhost'
+port = '5432'
+database = 'daneknight'
+user = os.environ.get('DB_USER')
+password = os.environ.get('DB_PASS')
+
+# Connect to the database
+connection = psycopg2.connect(
+    host=host,
+    port=port,
+    database=database,
+    user=user,
+    password=password
+)
+
+# connection = psycopg2.connect(database="daneknight", 
+#                 user= os.environ.get('DB_USER'),
+#                 password= os.environ.get('DB_PASS'), 
+#                 host="localhost", 
+#                 port=5432)
 
 cursor = connection.cursor()
 
-cursor.execute("SELECT * from portal.portal_users;")
+
+cursor.close()
+connection.close()
+# cursor.execute("SELECT * from portal.portal_users;")
 
 # Fetch all rows from database
-record = cursor.fetchall()
+# record = cursor.fetchall()
 
-print("Data from Database:- ", record)
+# print("Data from Database:- ", record)
 
 # import os
 # import sys
