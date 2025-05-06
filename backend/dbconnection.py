@@ -6,7 +6,7 @@ import os
 
 host = 'localhost'
 port = '5432'
-database = 'daneknight'
+database = 'db_grocery'
 user = os.environ.get('DB_USER')
 password = os.environ.get('DB_PASS')
 
