@@ -3,8 +3,6 @@ from config import load_config
 import os
 
 
-
-
 def connect(config):
 
     conn = psycopg2.connect(
