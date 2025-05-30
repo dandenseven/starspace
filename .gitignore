@@ -15,6 +15,7 @@ downloads/
 eggs/
 .eggs/
 .database.ini
+database.ini
 lib/
 lib64/
 parts/

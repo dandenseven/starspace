@@ -1,6 +1,7 @@
+import os
 import psycopg2
 from config import load_config
-import os
+
 
 
 def connect(config):

@@ -1,5 +1,5 @@
 import os
-from psycopg2 import config, connect
+from connect import psycopg2
 from flask import Flask
 from flask_cors import CORS
 
@@ -7,7 +7,19 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-cred = connect(config)
+conn = psycopg2.connect(
+            host = "localhost",
+            port = "5432",
+            database = "db_grocery",
+            user = os.environ.get("DB_USER"),
+            password = os.environ.get("DB_PASS")
+    )
+       
+cur = conn.cursor() 
+
+
+
+
 
 
 
@@ -15,4 +27,4 @@ cred = connect(config)
 
     
 if __name__ == "__main__":
-    app.run(threaded=True, ost='0.0.0.0', port="port")
+    app.run(debug=True)
