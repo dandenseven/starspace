@@ -10,6 +10,8 @@ dependencies = [
     "psycopg2>=2.9.10",
     "flask>=3.1.0",
     "flask-cors>=5.0.1",
+    "beautifulsoup4>=4.13.4",
+    "requests>=2.32.4",
 ]
 readme = "README.md"
 requires-python = ">= 3.13"

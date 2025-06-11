@@ -1,6 +1,7 @@
 import os
 from connect import psycopg2
-from flask import Flask
+from flask import Flask, request
+from bs4 import BeautifulSoup
 from flask_cors import CORS
 
 
@@ -16,6 +17,7 @@ conn = psycopg2.connect(
     )
        
 cur = conn.cursor() 
+
 
 
 
