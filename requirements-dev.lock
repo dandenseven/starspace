@@ -22,6 +22,8 @@ click==8.1.8
     # via flask
 cowsay==6.1
     # via starspace
+firebase==4.0.1
+    # via starspace
 flask==3.1.0
     # via flask-cors
     # via starspace
@@ -36,9 +38,14 @@ jinja2==3.1.6
 markupsafe==3.0.2
     # via jinja2
     # via werkzeug
+npm==0.1.1
+    # via starspace
+optional-django==0.1.0
+    # via npm
 psycopg2==2.9.10
     # via starspace
 requests==2.32.4
+    # via firebase
     # via starspace
 soupsieve==2.7
     # via beautifulsoup4

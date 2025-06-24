@@ -16,7 +16,9 @@ conn = psycopg2.connect(
             password = os.environ.get("DB_PASS")
     )
        
-cur = conn.cursor() 
+cur = conn.cursor()
+
+
 
 
 
