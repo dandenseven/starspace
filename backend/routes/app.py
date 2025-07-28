@@ -3,10 +3,21 @@ from connect import psycopg2
 from flask import Flask, request
 from bs4 import BeautifulSoup
 from flask_cors import CORS
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import firestore
 
 
 app = Flask(__name__)
 CORS(app)
+
+# default_app = firebase_admin.initialize_app()
+# cred = credentials.RefreshToken('path/to/refreshToken.json')
+# default_app = firebase_admin.initialize_app(cred)
+cred = credentials.Certificate(os.environ.get("GOOGLE_APPLICATION_CREDENTIALS"))
+firebase_admin.initialize_app(cred)
+db = firestore.client
+
 
 conn = psycopg2.connect(
             host = "localhost",
