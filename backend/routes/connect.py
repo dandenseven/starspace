@@ -3,7 +3,7 @@ import psycopg2
 from config import load_config
 
 
-
+# Function to pass in the connection configuration to PostgresSQL server
 def connect(config):
 
     conn = psycopg2.connect(

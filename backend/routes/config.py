@@ -1,7 +1,7 @@
 from configparser import ConfigParser
 import os
 
-
+# Load configuration file to initialize application settings
 def load_config(filename='.database.ini', section='postgresql'):
     parser = ConfigParser()
     parser.read(filename)

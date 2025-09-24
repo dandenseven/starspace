@@ -21,3 +21,29 @@ class Users:
                 "last_name": self.last_name,
                 "user_id": self.user_id
                 }
+    
+
+    def insert(self):
+        self.users_ref.document().set(self.to_json())
+
+    def logout(self):
+        self.users_ref.document().update(self.to_json())
+
+    def update(self):
+        self.users_ref.document(self.user_id).update(self.to_json())
+
+    def delete(self):
+        self.users_ref.document(self.user_id).delete(self.to_json())
+
+    @classmethod
+    def users_for_user(cls, user_id):
+        return cls.users_ref.document(user_id).get()
+
+    @classmethod
+    def login(cls, email, password):
+        return cls.users_ref.where("email", "==", email).where("password", "==",
+                                                               password).get()
+
+
+if __name__ == "__main__":
+    pass
