@@ -1,4 +1,7 @@
 import os
+from backend.models.users import Users
+from backend.models.stores import Stores
+from backend.models.grocery_lists import Grocery_list
 from connect import psycopg2
 from flask import Flask, request, jsonify
 from bs4 import BeautifulSoup
@@ -30,10 +33,10 @@ conn = psycopg2.connect(
        
 cur = conn.cursor()
 
-
+# Python model reference connection to Firestore db
 Users.users_ref = db.collection('users')
-# Vehicle.vehicle_ref = db.collection('vehicle')
-# Trip.trip_ref = db.collection('trip')
+Stores.stores_ref = db.collection('stores')
+Grocery_list.grocery_list.ref = db.collection('grocery_list')
 
 
 @app.route("/api/login", methods=["POST"])

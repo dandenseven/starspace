@@ -2,7 +2,7 @@ from firebase_admin import credentials, firestore, initialize_app
 import datetime
 
 
-class grocery_list():
+class Grocery_list():
 
     grocery_list_ref = ""
 

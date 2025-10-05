@@ -6,12 +6,13 @@ class Users:
 
     users_ref=""
 
-    def __init__(self, username="", email="", first_name="", last_name="", user_id=None):
+    def __init__(self, username="", email="", first_name="", last_name="", last_login="",user_id=None):
 
         self.username = username
         self.email = email
         self.first_name = first_name
         self.last_name = last_name
+        self.last_login = last_login
         self.user_id =user_id
 
     def to_json(self):
@@ -19,7 +20,7 @@ class Users:
                 "email": self.email,
                 "first_name": self.first_name,
                 "last_name": self.last_name,
-                "user_id": self.user_id
+                "last_login": datetime.datetime(self.last_login).timestamp
                 }
     
 
