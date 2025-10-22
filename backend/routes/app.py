@@ -1,7 +1,7 @@
 import os
-from backend.models.users import Users
-from backend.models.stores import Stores
-from backend.models.grocery_lists import Grocery_list
+from models.users import Users
+from models.stores import Stores
+from models.grocery_lists import Grocery_list
 from connect import psycopg2
 from flask import Flask, request, jsonify
 from bs4 import BeautifulSoup
